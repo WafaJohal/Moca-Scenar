@@ -1,0 +1,69 @@
+\documentclass[a4paper,twoside,12pt]{book}
+\input{monstyle}
+\usepackage{ragged2e}
+
+\makeindex
+
+\begin{document}
+
+%title page
+\makeatletter\@openrightfalse
+\newpage
+\thispagestyle{empty}
+\centering
+\vspace*{\fill}
+Copyright \copyright \the\year\ Wafa Benkaouar\par
+%Permission is granted to copy, distribute and\slash or modify 
+%this document. \par 
+All rights reserved. 
+\vspace*{\fill}
+\input{title}
+\pagenumbering{roman}
+
+%\begin{spacing}{2}
+
+\newpage
+\thispagestyle{empty}
+%\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+\listoffigures
+% other meta stuff can go here
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\thispagestyle{empty}
+\setcounter{page}{0}
+% other meta stuff can go here
+
+
+\pagenumbering{arabic}
+\justifying
+  \input{introduction}
+  \input{senarios}
+  \input{brahms}
+\newpage
+\thispagestyle{empty}
+%\mbox{}
+%  \input{environment}
+% %\input{need}
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+%  \input{theoriticalapproach}
+%  %\input{implementation}
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+%  \input{evaluation}
+%  \input{conclusion}
+
+ %\makeatletter\@openrightfalse
+%\bibliographystyle{ieeetr}
+\bibliography{library}
+%\bibliography{biblio,library}
+%\end{spacing}
+\end{document}
+

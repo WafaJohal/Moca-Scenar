@@ -1,0 +1,284 @@
+\usepackage[a4paper,inner=3.8cm,outer=2.6cm,bottom=3.7cm,top=3.7cm]{geometry} %
+\DeclareFixedFont{\RM}{T1}{ptm}{b}{n}{2cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%WAFA COMMAND%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+% abbreviation list 
+\usepackage[]{nomencl}
+\makenomenclature
+ 
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+ \hbox{}
+ \thispagestyle{empty}
+ \newpage
+ \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+%%%%%%% Pagestyle stuff %%%%%%%%%%%%%%%%%
+ \usepackage{fancyhdr}                 %%
+   \pagestyle{fancy}                   %%
+   \fancyhf{} %delete the current section for header and footer
+    \columnsep 3em                     %%
+%    \renewcommand{\headrulewidth}{0.2pt}
+ %   \renewcommand{\footrulewidth}{0.2pt}
+    
+  %  \renewcommand{\headrule}{{\color{blue}\hrule width\headwidth
+   %     height\headrulewidth \vskip-\headrulewidth}}
+
+    \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+    \renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+    \fancyhead[LE,RO]{\thepage}
+    \fancyhead[LO]{\thesection \hspace{2pt} \rightmark}         %%    
+    \fancyhead[RE]{\textsc{\leftmark}}
+    
+
+    %\fancyfoot[C]{Wafa \textsc{Benkaouar}}
+    %\fancyfoot[LE,RO]{\thepage}
+
+
+%%%%%%% End Pagestyle stuff %%%%%%%%%%%%%
+
+% \makechapterstyle{BlueBox}{%
+% \renewcommand{\chapnamefont}{\large\scshape}
+% \renewcommand{\chapnumfont}{\Huge\bfseries}
+% \renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
+% \setlength{\beforechapskip}{20pt}
+% \setlength{\midchapskip}{26pt}
+% \setlength{\afterchapskip}{40pt}
+% \renewcommand{\printchaptername}{}
+% \renewcommand{\chapternamenum}{}
+% \renewcommand{\printchapternum}{%
+% \sbox{\ChpNumBox}{%
+% 46
+% \BuildChpNum{\chapnamefont\@chapapp}%
+% {\chapnumfont\thechapter}}}
+% \renewcommand{\printchapternonum}{%
+% \sbox{\ChpNumBox}{%
+% \BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
+% {\chapnumfont\hphantom{\thechapter}}}}
+% \renewcommand{\afterchapternum}{}
+% \renewcommand{\printchaptertitle}[1]{%
+% \usebox{\ChpNumBox}\hfill
+% \parbox[t]{\hsize-\wd\ChpNumBox-1em}{%
+% \vspace{\midchapskip}%
+% \thickhrulefill\par
+% \chaptitlefont ##1\par}}%
+% }
+% \chapterstyle{BlueBox}
+
+%%%% START CUSTOMIZING CHAPTER STYLES %%%%%
+
+% Changement de la syntaxe de la commande \chapter
+\usepackage{helvet}
+\usepackage{psboxit,pstcol,graphicx}
+\usepackage{pslatex}
+
+\makeatletter
+\makeatletter
+\def\@makechapterhead#1{%
+  \parindent \z@  \reset@font
+% \vskip 50pt
+  %\hrulefill
+ % \vskip 20pt
+  \hbox to \hsize{%
+    \rlap{\raisebox{-0.1em}{\raisebox{ \depth}{}}}%
+          %\includegraphics[width=10em]{images/logo3.png}}}}%
+    \rlap{\raisebox{0.1em}{\hbox to 10em{\hss \hspace{0.5em}
+    \reset@font\fontsize{6em}{6em}\selectfont  \thechapter
+\hss}}}%
+    \hspace{10em}%
+    \vbox{%
+      \advance\hsize by -10em
+\raggedright
+      \reset@font\bfseries\Huge
+      #1
+      \par
+      }%
+    }%
+%   \vskip 20pt
+%   \hrulefill
+   \vskip 50pt
+  }
+\def\@makeschapterhead#1{%
+  \parindent \z@ \raggedright \reset@font
+% \vskip 10pt
+%   \hrulefill
+%   \vskip 20pt
+  \hbox to \hsize{%
+    \rlap{\raisebox{-2.5em}{\raisebox{\depth}{}}}%
+         %\includegraphics[width=10em]{images/logo3.png}}}}%
+    \hspace{10em}%
+    \vbox{%
+      \advance\hsize by -10em
+\raggedright
+      \reset@font\bfseries\Huge
+      #1
+      \par
+      }%
+    }%
+%   \vskip 20pt
+%   \hrulefill
+   \vskip 50pt
+}
+
+
+% \makeatletter
+% \def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+% \def\@makechapterhead#1{%
+%   \vspace*{10\p@}%
+%   {\parindent \z@ \centering \reset@font
+%         \thickhrulefill
+%         \par\nobreak
+%         \scshape \@chapapp{} \strut\thechapter
+%         \par\nobreak
+%         \interlinepenalty\@M
+%         \hrule
+%         \vspace*{10\p@}%
+%         {\Huge \bfseries #1}\par\nobreak
+%         \thickhrulefill
+%         \vspace*{10\p@}%
+%     \vskip 100\p@
+%   }}
+% \def\@makeschapterhead#1{%
+%   \vspace*{10\p@}%
+%   {\parindent \z@ \centering \reset@font
+%         \thickhrulefill
+%         \par\nobreak
+%         {\Huge \bfseries \strut #1}\par\nobreak
+%         \interlinepenalty\@M
+%         \hrule
+%         \vspace*{10\p@}%
+%     \vskip 100\p@
+%   }}
+% \makechapterstyle{section}{
+% \renewcommand{\printchaptername}{}
+% \renewcommand{\chapternamenum}{}
+% \renewcommand{\chapnumfont}{\normalfont\Huge\bfseries}
+% \renewcommand{\printchapternum}{\chapnumfont \thechapter\space}
+% \renewcommand{\afterchapternum}{}
+% }
+
+%%%%%%%%%%%%%% STOP CUSTOMIZING CHAPTER STYLES %%%%%
+
+%% Section Style
+
+
+\usepackage{lipsum}
+\usepackage{textpos}
+\usepackage{graphics}       % for jpeg images
+\usepackage{algorithmic}    % Algorithms
+%\usepackage[T1]{fontenc}    % For some european characters
+ \usepackage{etex}          % For some reason, pdflatex breaks if I don't include the etex package
+ \usepackage{amsmath}       % I think this gives me some symbols
+ \usepackage{amsthm}        % Does theorem stuff
+% \usepackage{amssymb}       % more symbols and fonts
+%  \usepackage{accents}
+%  \usepackage{bbm}           % for the nice blackboard bold 1
+ \usepackage{empheq}        % Some more extensible arrows, like \xmapsto
+ \usepackage{enumitem}
+ \usepackage{mathrsfs}      % Sheafy font \mathscr{}
+% \usepackage{picinpar}      % for pictures in paragraphs
+% \usepackage{tikz}
+ \usepackage[nofancy]{rcsinfo}
+ \usepackage[all]{xy}       % Include XY-pic
+    \SelectTips{cm}{10}     % Use the nicer arrowheads
+    \everyxy={<2.5em,0em>:} % Sets the scale I like
+ \usepackage[pdfauthor={Wafa BENKAOUAR},%
+pdftitle={Multimodal detection of Intention of Interaction},%pagebackref=true
+]{hyperref}
+
+
+%
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  %linktoc=none,
+  citecolor=red,
+  %Mpagebackref=true,
+urlcolor=cyan,
+  bookmarksnumbered=true}
+
+%
+
+%%%%%%% Stuff for keeping track of sections %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newcount\n
+ \newcommand{\sektion}[2]{\stepcounter{section} \renewcommand{\thesection}{#1}\n=\count0 \newpage
+\ifnum\count0=\n \ifnum\count0>1\ \newpage \fi\fi\section{#2} \gdef\sectionname{#1\quad #2, v.~\rcsInfoMonth-\rcsInfoDay}}
+ \newcommand{\subsektion}[1]{\subsection*{#1} \addcontentsline{toc}{subsection}{#1}}
+ %% This is the empty section title, before any section title is set %%
+ \newcommand\sectionname{}                                           %%
+%%%%%%% End stuff for keeping track of sections %%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Theorem Styles and Counters %%%%%%%%%%%%%%%%%%%%%%%%%%
+ \renewcommand{\theequation}{\thesection.\arabic{equation}}         %%
+ \makeatletter                                                      %%
+    \@addtoreset{equation}{section} % Make the equation counter reset each section
+    \@addtoreset{footnote}{section} % Make the footnote counter reset each section
+                                                                    %%
+ \newenvironment{warning}[1][]{%                                    %%
+    \begin{trivlist} \item[] \noindent%                             %%
+    \begingroup\hangindent=2pc\hangafter=-2                         %%
+    \clubpenalty=10000%                                             %%
+    \hbox to0pt{\hskip-\hangindent\manfntsymbol{127}\hfill}\ignorespaces%
+    \refstepcounter{equation}\textbf{Warning~\theequation}%         %%
+    \@ifnotempty{#1}{\the\thm@notefont \ (#1)}\textbf{.}            %%
+    \let\p@@r=\par \def\p@r{\p@@r \hangindent=0pc} \let\par=\p@r}%  %%
+    {\hspace*{\fill}$\lrcorner$\endgraf\endgroup\end{trivlist}}     %%
+                                                                    %%
+ \newenvironment{exercise}[1][]{\begin{trivlist}%                   %%
+    \item{\bf Exercise\@ifnotempty{#1}{ #1}. }\it}{\end{trivlist}}   %%
+ \newenvironment{solution}{\begin{trivlist}%                        %%
+    \item{\it Solution.}}{\end{trivlist}}                           %%
+                                                                    %%
+ \def\newprooflikeenvironment#1#2#3#4{%                             %%
+      \newenvironment{#1}[1][]{%                                    %%
+          \refstepcounter{equation}                                 %%
+          \begin{proof}[{\rm\csname#4\endcsname{#2~\theequation}%   %%
+          \@ifnotempty{##1}{\the\thm@notefont \ (##1)}\csname#4\endcsname{.}}]%%
+          \def\qedsymbol{#3}}%                                      %%
+         {\end{proof}}}                                             %%
+ \makeatother                                                       %%
+                                                                    %%
+ \newprooflikeenvironment{definition}{Definition}{$\diamond$}{textbf}%
+ \newprooflikeenvironment{example}{Example}{$\diamond$}{textbf}     %%
+ \newprooflikeenvironment{remark}{Remark}{$\diamond$}{textbf}       %%
+                                                                    %%
+ \theoremstyle{plain}                                               %%
+ \newtheorem{theorem}[equation]{Theorem}                            %%
+ \newtheorem*{claim}{Claim}                                         %%
+ \newtheorem*{lemma*}{Lemma}                                        %%
+ \newtheorem*{theorem*}{Theorem}                                    %%
+ \newtheorem{lemma}[equation]{Lemma}                                %%
+ \newtheorem{corollary}[equation]{Corollary}                        %%
+ \newtheorem{proposition}[equation]{Proposition}                    %%
+%%%%%%%%%%% End Theorem Styles and Counters %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% These three lines load and resize a caligraphic font %%%%%%%%%
+%%% which I use whenever I want lowercase \mathcal %%%%%%%%%%%%%%%
+ \DeclareFontFamily{OT1}{pzc}{}                                 %%
+ \DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.100] pzcmi7t}{}  %%
+ \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}                %%
+                                                                %%
+%%% and this is manfnt; used to produce the warning symbol %%%%%%%
+ \DeclareFontFamily{U}{manual}{}                                %%
+ \DeclareFontShape{U}{manual}{m}{n}{ <->  manfnt }{}            %%
+ \newcommand{\manfntsymbol}[1]{%                                %%
+    {\fontencoding{U}\fontfamily{manual}\selectfont\symbol{#1}}}%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FONT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[urw-garamond]{mathdesign}
+\usepackage[charter]{mathdesign}
+%\usepackage{mathptmx}			
+%\usepackage{pxfonts}
+\usepackage[T1]{fontenc}		
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\setlength{\parindent}{0.4cm}
+% \usepackage{pgfplots}
+\usepackage{bchart}
